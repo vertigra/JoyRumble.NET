@@ -1,14 +1,14 @@
 ﻿using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 
 namespace JoyRumble.NET
 {
-
-
-    internal class Program
+    public class Program
     {
-        static void Main(int[] args)
+        public static void Main(string[] args)
         {
-            ImportHelpers.Joyrumble(args[0], args[1], args[2], args[3]);
+            ImportHelpers.Joyrumble(int.Parse(args[0]), int.Parse(args[1]), int.Parse(args[2]), int.Parse(args[3]));
+            Task.Delay(int.Parse(args[3])).Wait();
         }
     }
 }
