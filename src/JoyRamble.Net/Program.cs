@@ -6,9 +6,9 @@ namespace JoyRumble.NET
 
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(int[] args)
         {
-            ImportHelpers.Joyrumble(0, 8000, 500, 10);
+            ImportHelpers.Joyrumble(args[0], args[1], args[2], args[3]);
         }
     }
 }
