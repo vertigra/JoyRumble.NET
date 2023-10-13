@@ -13,9 +13,13 @@
       <Configuration>VisualStudioDebug</Configuration>
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="VisualStudioRelease|ARM64">
+      <Configuration>VisualStudioRelease</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="joyramble.c" />
+    <ClCompile Include="libjoyrumble.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="joyramble.h" />
@@ -44,6 +48,11 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>WSL2_1_0</PlatformToolset>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioRelease|ARM64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>Remote_GCC_1_0</PlatformToolset>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxDebug|ARM64'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -70,6 +79,11 @@
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxRelease|ARM64'">
+    <TargetExt>.so</TargetExt>
+    <TargetName>joyrumble</TargetName>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioRelease|ARM64'">
     <TargetExt>.so</TargetExt>
     <TargetName>joyrumble</TargetName>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
