@@ -8,7 +8,9 @@
     <StartupObject>JoyRumble.NET.Program</StartupObject>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <BaseOutputPath>..\bin\</BaseOutputPath>
-    <Configurations>Debug;Release;LinuxDebug;LinuxRelease</Configurations>
+    <Configurations>LinuxDebug;LinuxRelease</Configurations>
+    <Platforms>AnyCPU</Platforms>
+    <AssemblyName>joyrumble.net</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
