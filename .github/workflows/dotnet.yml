@@ -22,15 +22,22 @@ jobs:
       with:
         arch: aarch64
         distro: ubuntu_latest
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 7.0.x
-    - name: Install template
-      run: dotnet new install GCC.Build.Template
-    - name: Restore dependencies
-      run: dotnet restore src/JoyRumble.NET.sln
-    - name: Build
-      run: dotnet build /p:Configuration=LinuxDebug src/JoyRumble.NET.sln
+
+        dockerRunArgs: |
+            --volume "${PWD}/src:/src"
+
+        run: |
+         ls -al "${PWD}/src"
+         
+    #- name: Setup .NET
+    #  uses: actions/setup-dotnet@v3
+    #  with:
+    #    dotnet-version: 7.0.x
+    #- name: Install template
+    #  run: dotnet new install GCC.Build.Template
+    #- name: Restore dependencies
+    #  run: dotnet restore src/JoyRumble.NET.sln
+    #- name: Build
+    #  run: dotnet build /p:Configuration=LinuxDebug src/JoyRumble.NET.sln
     #- name: Test
     #  run: dotnet test --no-build --verbosity normal
