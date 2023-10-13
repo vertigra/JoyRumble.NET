@@ -25,6 +25,6 @@ jobs:
     - name: Install template
       run: dotnet new install GCC.Build.Template
     - name: Build
-      run: dotnet build /p:Configuration=LinuxDebug
+      run: dotnet build /p:Configuration=LinuxDebug src/JoyRumble.NET.sln
     #- name: Test
     #  run: dotnet test --no-build --verbosity normal
