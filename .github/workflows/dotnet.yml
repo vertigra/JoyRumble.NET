@@ -27,7 +27,8 @@ jobs:
             --volume "${PWD}/src:/src"
 
         run: |
-         apt-get install wget
+         apt-get install update
+         apt-get -y install wget
          wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet7pi/main/install.sh |  bash
          dotnet new install GCC.Build.Template
          dotnet build /p:Configuration=LinuxDebug src/JoyRumble.NET.sln
