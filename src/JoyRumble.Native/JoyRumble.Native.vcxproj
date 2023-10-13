@@ -46,7 +46,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxRelease|ARM64'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>WSL2_1_0</PlatformToolset>
+    <PlatformToolset>WSL_1_0</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioRelease|ARM64'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -56,7 +56,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxDebug|ARM64'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>WSL2_1_0</PlatformToolset>
+    <PlatformToolset>WSL_1_0</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioDebug|ARM64'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
