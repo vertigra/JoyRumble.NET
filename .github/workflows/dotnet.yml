@@ -20,10 +20,10 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
-    #- name: Restore dependencies
-    #  run: dotnet restore
     - name: Install template
       run: dotnet new install GCC.Build.Template
+    - name: Restore dependencies
+      run: dotnet restore src/JoyRumble.NET.sln
     - name: Build
       run: dotnet build /p:Configuration=LinuxDebug src/JoyRumble.NET.sln
     #- name: Test
