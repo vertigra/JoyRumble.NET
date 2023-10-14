@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JoyRumble.NET", "JoyRamble.
 		{A24376CE-188C-45BD-B3D7-16BA09B2C1F2} = {A24376CE-188C-45BD-B3D7-16BA09B2C1F2}
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JoyRumble.NET.App", "JoyRumble.NET.App\JoyRumble.NET.App.csproj", "{7E4767F5-7338-463A-A2E5-9EEE1C02FFD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		LinuxDebug|ARM64 = LinuxDebug|ARM64
@@ -38,6 +40,14 @@ Global
 		{D2AFB152-FE48-45D6-9F49-AFF1D2DD6D42}.VisualStudioDebug|ARM64.Build.0 = VisualStudioDebug|Any CPU
 		{D2AFB152-FE48-45D6-9F49-AFF1D2DD6D42}.VisualStudioRelease|ARM64.ActiveCfg = VisualStudioRelease|Any CPU
 		{D2AFB152-FE48-45D6-9F49-AFF1D2DD6D42}.VisualStudioRelease|ARM64.Build.0 = VisualStudioRelease|Any CPU
+		{7E4767F5-7338-463A-A2E5-9EEE1C02FFD9}.LinuxDebug|ARM64.ActiveCfg = Debug|Any CPU
+		{7E4767F5-7338-463A-A2E5-9EEE1C02FFD9}.LinuxDebug|ARM64.Build.0 = Debug|Any CPU
+		{7E4767F5-7338-463A-A2E5-9EEE1C02FFD9}.LinuxRelease|ARM64.ActiveCfg = LinuxRelease|Any CPU
+		{7E4767F5-7338-463A-A2E5-9EEE1C02FFD9}.LinuxRelease|ARM64.Build.0 = LinuxRelease|Any CPU
+		{7E4767F5-7338-463A-A2E5-9EEE1C02FFD9}.VisualStudioDebug|ARM64.ActiveCfg = VisualStudioDebug|Any CPU
+		{7E4767F5-7338-463A-A2E5-9EEE1C02FFD9}.VisualStudioDebug|ARM64.Build.0 = VisualStudioDebug|Any CPU
+		{7E4767F5-7338-463A-A2E5-9EEE1C02FFD9}.VisualStudioRelease|ARM64.ActiveCfg = VisualStudioRelease|Any CPU
+		{7E4767F5-7338-463A-A2E5-9EEE1C02FFD9}.VisualStudioRelease|ARM64.Build.0 = VisualStudioRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
