@@ -29,7 +29,7 @@ jobs:
          apt-get update
          apt-get install -y dotnet-sdk-7.0
          apt-get install -y g++
-         dotnet new install GCC.Build.Template --interactive
+         dotnet new install GCC.Build.Template --interactive --nuget-source https://api.nuget.org/v3/index.json
 
         run: |
          dotnet build /p:Configuration=LinuxDebug src/JoyRumble.NET.sln
