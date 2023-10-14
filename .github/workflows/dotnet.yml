@@ -38,19 +38,11 @@ jobs:
         run: |
          dotnet build /p:Configuration=LinuxDebug src/JoyRumble.NET.sln
          
-    - name: Show result LinuxDebug 
-      run: |
-       ls -al "${PWD}/src/bin"
-         
-    #- name: Setup .NET
-    #  uses: actions/setup-dotnet@v3
-    #  with:
-    #    dotnet-version: 7.0.x
-    #- name: Install template
-    #  run: dotnet new install GCC.Build.Template
-    #- name: Restore dependencies
-    #  run: dotnet restore src/JoyRumble.NET.sln
-    #- name: Build
-    #  run: dotnet build /p:Configuration=LinuxDebug src/JoyRumble.NET.sln
-    #- name: Test
-    #  run: dotnet test --no-build --verbosity normal
+    - name: Tar artifact files 
+      run: tar -cvf joyramble_debug_arm64.tar "${PWD}/src/bin/LinuxDebug"
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+       name: joyramble-debug-arm64-artifact
+       path: joyramble_debug_arm64.tar
