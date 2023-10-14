@@ -36,7 +36,7 @@ jobs:
         run: |
          dotnet build /p:Configuration=LinuxDebug src/JoyRumble.NET.sln
          
-    - name: Show result
+    - name: Show result LinuxDebug 
       run: |
        ls -al "${PWD}/src/bin/LinuxDebug"
          
