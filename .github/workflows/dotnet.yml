@@ -29,6 +29,7 @@ jobs:
          apt-get update
          apt-get install -y dotnet-sdk-7.0
          apt-get install -y g++
+         apt-get install -y curl
          curl -fsSL https://aka.ms/install-artifacts-credprovider.sh
          dotnet new install GCC.Build.Template --interactive --nuget-source https://api.nuget.org/v3/index.json         
 
