@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography;
-using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace JoyRumble.NET
 {
