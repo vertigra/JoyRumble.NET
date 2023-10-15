@@ -38,11 +38,8 @@ jobs:
         run: |
          dotnet build /p:Configuration=LinuxDebug src/JoyRumble.NET.sln
          
-    - name: Tar artifact files 
-      run: tar -cvf joyramble_debug_arm64.tar "${PWD}/src/bin/LinuxDebug"
-
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
-       name: joyramble-debug-arm64-artifact
-       path: joyramble_debug_arm64.tar
+       name: joyramble-debug-arm64
+       path: "${PWD}/src/bin/LinuxDebug/"
