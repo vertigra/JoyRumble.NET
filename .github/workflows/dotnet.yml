@@ -42,4 +42,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
        name: joyramble-debug-arm64
-       path: "${PWD}/src/bin/LinuxDebug/"
+       path: /src/bin/LinuxDebug/
