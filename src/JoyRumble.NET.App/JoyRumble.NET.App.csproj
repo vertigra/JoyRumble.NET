@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,8 +6,8 @@
     <Nullable>enable</Nullable>
 	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <BaseOutputPath>..\bin\</BaseOutputPath>
-	<Configurations>LinuxDebug;LinuxRelease;VisualStudioDebug;VisualStudioRelease</Configurations>
 	<Platforms>AnyCPU</Platforms>
+	<Configurations>LinuxDebug;LinuxRelease;VisualStudioDebug;VisualStudioRelease</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
