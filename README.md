@@ -10,3 +10,14 @@ $ sudo apt-get install dkms
 $ sudo git clone https://github.com/paroj/xpad.git /usr/src/xpad-0.4
 $ sudo dkms install -m xpad -v 0.4
 ```
+
+## Build 
+
+### Linux (ARM64) 
+
+```bash
+$ git clone https://github.com/vertigra/JoyRumble.NET.git
+$ chmod +x JoyRumble.NET/src/BuildLinuxDebug.sh
+$ bash JoyRumble.NET/src/BuildLinuxDebug.sh
+```
+You will find the results of the build in the directory `JoyRumble.NET/src/bin/LinuxDebug`
