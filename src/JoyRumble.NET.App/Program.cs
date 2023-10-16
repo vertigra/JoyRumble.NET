@@ -1,11 +1,9 @@
-﻿using System;
-
-namespace JoyRumble.NET.App
+﻿namespace JoyRumble.NET.App
 {
     internal class Program
     {
         private static int mJoynumber, mStrong, mWeak, mDuration;
-        private static Gamepad mGamepad;
+        private static Gamepad? mGamepad;
         private static bool mRunAsync;
 
         static void Main(string[] args)
@@ -29,6 +27,9 @@ namespace JoyRumble.NET.App
 
         private static async void StartAsync()
         {
+            if (mGamepad == null)
+                return;
+
             await mGamepad.JoyrumbleAsync(mJoynumber, mStrong, mWeak, mDuration);
         }
     }

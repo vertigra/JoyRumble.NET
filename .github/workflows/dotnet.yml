@@ -36,7 +36,8 @@ jobs:
          dotnet new install GCC.Build.Template --interactive --nuget-source https://api.nuget.org/v3/index.json         
 
         run: |
-         dotnet build /p:Configuration=LinuxDebug src/JoyRumble.NET.sln
+         chmod u+x src/BuildLinuxDebug.sh
+         bash src/BuildLinuxDebug.sh
          
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
