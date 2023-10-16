@@ -37,7 +37,7 @@ jobs:
 
         run: |
          chmod u+x src/BuildLinuxDebug.sh
-         ./BuildLinuxDebug.sh
+         bash src/BuildLinuxDebug.sh
          
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
