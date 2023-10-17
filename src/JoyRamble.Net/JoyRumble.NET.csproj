@@ -10,6 +10,32 @@
     <Configurations>LinuxDebug;LinuxRelease;VisualStudioDebug;VisualStudioRelease</Configurations>
     <Platforms>AnyCPU</Platforms>
     <AssemblyName>joyrumble</AssemblyName>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageProjectUrl>https://github.com/vertigra/JoyRumble.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/vertigra/JoyRumble.NET.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>linux, gamepad, vibration, raspberry-pi</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Joyrumble.NET</Title>
+    <Description>Dotnet library wrapper for gamepad vibration</Description>
+    <Authors>vertigra</Authors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxDebug|AnyCPU'">
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxRelease|AnyCPU'">
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioDebug|AnyCPU'">
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioRelease|AnyCPU'">
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +48,8 @@
     <None Remove="bin\**" />
     <None Remove="JoyRumble.Native\**" />
     <None Remove="obj\**" />
+	<None Include="..\bin\$(Configuration)\joyrumble.so" PackagePath="lib/$(TargetFramework)/" Pack="true" />
   </ItemGroup>
+  
 
 </Project>
