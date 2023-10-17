@@ -48,7 +48,12 @@
     <None Remove="bin\**" />
     <None Remove="JoyRumble.Native\**" />
     <None Remove="obj\**" />
-	<None Include="..\bin\$(Configuration)\joyrumble.so" PackagePath="lib/$(TargetFramework)/" Pack="true" />
+  </ItemGroup>
+
+  <ItemGroup Label="CreateNugetPackage">
+    <None Include="..\bin\$(Configuration)\joyrumble.so" PackagePath="lib/$(TargetFramework)/" Pack="true">
+      <Visible>false</Visible>
+    </None>
   </ItemGroup>
   
 
