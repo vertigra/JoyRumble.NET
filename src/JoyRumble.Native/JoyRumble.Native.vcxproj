@@ -75,7 +75,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioDebug|ARM64'">
     <TargetExt>.so</TargetExt>
-    <TargetName>joyrumble</TargetName>
+    <TargetName>joyrumble.arm64</TargetName>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxRelease|ARM64'">
@@ -85,7 +85,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioRelease|ARM64'">
     <TargetExt>.so</TargetExt>
-    <TargetName>joyrumble</TargetName>
+    <TargetName>joyrumble.arm64</TargetName>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup />
