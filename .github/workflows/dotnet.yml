@@ -36,8 +36,8 @@ jobs:
          dotnet new install GCC.Build.Template --interactive --nuget-source https://api.nuget.org/v3/index.json         
 
         run: |
-         chmod u+x src/BuildLinuxDebug.sh
-         bash src/BuildLinuxDebug.sh
+         chmod +x src/BuildLinuxDebug.sh
+         bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM64
          
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
