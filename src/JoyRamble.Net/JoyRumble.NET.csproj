@@ -51,7 +51,12 @@
   </ItemGroup>
 
   <ItemGroup Label="CreateNugetPackage">
-    <None Include="..\bin\$(Configuration)\joyrumble.so" PackagePath="lib/$(TargetFramework)/" Pack="true">
+    <None Include="..\bin\$(Configuration)\joyrumble.arm.so" PackagePath="lib/$(TargetFramework)/" Pack="true" 
+          Condition="Exists('..\bin\$(Configuration)\joyrumble.arm.so')">
+      <Visible>false</Visible>
+    </None>
+    <None Include="..\bin\$(Configuration)\joyrumble.arm64.so" PackagePath="lib/$(TargetFramework)/" Pack="true"
+      Condition="Exists('..\bin\$(Configuration)\joyrumble.arm64.so')">
       <Visible>false</Visible>
     </None>
   </ItemGroup>

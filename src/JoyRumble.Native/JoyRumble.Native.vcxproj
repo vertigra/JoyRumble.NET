@@ -1,17 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="LinuxDebug|ARM">
+      <Configuration>LinuxDebug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="LinuxDebug|ARM64">
       <Configuration>LinuxDebug</Configuration>
       <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="LinuxRelease|ARM">
+      <Configuration>LinuxRelease</Configuration>
+      <Platform>ARM</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="LinuxRelease|ARM64">
       <Configuration>LinuxRelease</Configuration>
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="VisualStudioDebug|ARM">
+      <Configuration>VisualStudioDebug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="VisualStudioDebug|ARM64">
       <Configuration>VisualStudioDebug</Configuration>
       <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="VisualStudioRelease|ARM">
+      <Configuration>VisualStudioRelease</Configuration>
+      <Platform>ARM</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="VisualStudioRelease|ARM64">
       <Configuration>VisualStudioRelease</Configuration>
@@ -48,7 +64,17 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>WSL_1_0</PlatformToolset>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxRelease|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>WSL_1_0</PlatformToolset>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioRelease|ARM64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>Remote_GCC_1_0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioRelease|ARM'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>Remote_GCC_1_0</PlatformToolset>
@@ -58,7 +84,17 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>WSL_1_0</PlatformToolset>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxDebug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>WSL_1_0</PlatformToolset>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioDebug|ARM64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>Remote_GCC_1_0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioDebug|ARM'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PlatformToolset>Remote_GCC_1_0</PlatformToolset>
@@ -70,22 +106,42 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxDebug|ARM64'">
     <TargetExt>.so</TargetExt>
-    <TargetName>joyrumble</TargetName>
+    <TargetName>joyrumble.arm64</TargetName>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxDebug|ARM'">
+    <TargetExt>.so</TargetExt>
+    <TargetName>joyrumble.arm</TargetName>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioDebug|ARM64'">
     <TargetExt>.so</TargetExt>
-    <TargetName>joyrumble</TargetName>
+    <TargetName>joyrumble.arm64</TargetName>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioDebug|ARM'">
+    <TargetExt>.so</TargetExt>
+    <TargetName>joyrumble.arm</TargetName>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxRelease|ARM64'">
     <TargetExt>.so</TargetExt>
-    <TargetName>joyrumble</TargetName>
+    <TargetName>joyrumble.arm64</TargetName>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxRelease|ARM'">
+    <TargetExt>.so</TargetExt>
+    <TargetName>joyrumble.arm</TargetName>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioRelease|ARM64'">
     <TargetExt>.so</TargetExt>
-    <TargetName>joyrumble</TargetName>
+    <TargetName>joyrumble.arm64</TargetName>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualStudioRelease|ARM'">
+    <TargetExt>.so</TargetExt>
+    <TargetName>joyrumble.arm</TargetName>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup />
