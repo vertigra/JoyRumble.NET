@@ -38,6 +38,7 @@ jobs:
         run: |
          chmod +x src/DotnetLinuxBuild.sh
          bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM
+         dotnet clean src
          bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM64
          
     - name: Upload Artifact
