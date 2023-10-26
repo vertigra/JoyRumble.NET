@@ -48,6 +48,7 @@ jobs:
             bash dotnet-install.sh --channel 7.0
             export DOTNET_ROOT=$HOME/dotnet
             export PATH=$PATH:$HOME/dotnet
+            ln -s $DOTNET_ROOT/dotnet /usr/local/bin
             wget https://aka.ms/install-artifacts-credprovider.sh | bash
             dotnet new install GCC.Build.Template --interactive --nuget-source https://api.nuget.org/v3/index.json   
 
