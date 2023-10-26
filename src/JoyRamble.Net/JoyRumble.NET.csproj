@@ -10,16 +10,16 @@
     <Configurations>LinuxDebug;LinuxRelease;VisualStudioDebug;VisualStudioRelease</Configurations>
     <Platforms>AnyCPU</Platforms>
     <AssemblyName>joyrumble</AssemblyName>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageProjectUrl>https://github.com/vertigra/JoyRumble.NET</PackageProjectUrl>
     <RepositoryUrl>https://github.com/vertigra/JoyRumble.NET.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>linux, gamepad, vibration, raspberry-pi</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Joyrumble.NET</Title>
     <Description>Dotnet library wrapper for gamepad vibration</Description>
     <Authors>vertigra</Authors>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxDebug|AnyCPU'">
@@ -51,15 +51,11 @@
   </ItemGroup>
 
   <ItemGroup Label="CreateNugetPackage">
-    <None Include="..\bin\$(Configuration)\joyrumble.arm.so" PackagePath="lib/$(TargetFramework)/" Pack="true" 
-          Condition="Exists('..\bin\$(Configuration)\joyrumble.arm.so')">
+    <None Include="..\bin\$(Configuration)\joyrumble.arm.so" PackagePath="lib/$(TargetFramework)/" Pack="true" Condition="Exists('..\bin\$(Configuration)\joyrumble.arm.so')">
       <Visible>false</Visible>
     </None>
-    <None Include="..\bin\$(Configuration)\joyrumble.arm64.so" PackagePath="lib/$(TargetFramework)/" Pack="true"
-      Condition="Exists('..\bin\$(Configuration)\joyrumble.arm64.so')">
+    <None Include="..\bin\$(Configuration)\joyrumble.arm64.so" PackagePath="lib/$(TargetFramework)/" Pack="true" Condition="Exists('..\bin\$(Configuration)\joyrumble.arm64.so')">
       <Visible>false</Visible>
     </None>
   </ItemGroup>
-  
-
 </Project>
