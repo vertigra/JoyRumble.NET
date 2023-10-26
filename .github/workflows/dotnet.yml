@@ -45,5 +45,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
        name: joyramble-debug-arm64
-       path: /home/runner/work/JoyRumble.NET/JoyRumble.NET/src/bin/LinuxRelease/
+       path: /home/runner/work/JoyRumble.NET/JoyRumble.NET/src/bin/LinuxDebug/
        if-no-files-found: warn
