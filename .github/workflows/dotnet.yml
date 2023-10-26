@@ -37,9 +37,10 @@ jobs:
 
         run: |
          chmod +x src/DotnetLinuxBuild.sh
-         bash src/DotnetLinuxBuild.sh -c LinuxRelease -p ARM64
-         bash src/DotnetLinuxBuild.sh -c LinuxRelease -p ARM
-         
+         bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM64
+         bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM
+
+    
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
