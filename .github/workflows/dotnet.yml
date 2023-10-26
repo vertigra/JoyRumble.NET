@@ -34,7 +34,7 @@ jobs:
         base_image: ${{ matrix.base_image }}
         cpu: ${{ matrix.cpu }}
         cpu_info: ${{ matrix.cpu_info }}
-        image_additional_mb: 512
+        image_additional_mb: 1536
         commands: |
             df . -h
             test `uname -m` = ${{ matrix.arch }}
