@@ -46,7 +46,8 @@ jobs:
             wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
             chmod +x dotnet-install.sh
             bash dotnet-install.sh --channel 7.0
-            wget -fsSL https://aka.ms/install-artifacts-credprovider.sh | bash
+            source ~/.bashrc
+            wget https://aka.ms/install-artifacts-credprovider.sh | bash
             dotnet new install GCC.Build.Template --interactive --nuget-source https://api.nuget.org/v3/index.json   
 
     #steps:
