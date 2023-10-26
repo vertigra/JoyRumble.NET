@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: uraimo/run-on-arch-action@v2.5.1
       name: Run commands
-      id: build
+      id: build-arm64
       with:
         arch: aarch64
         distro: ubuntu_latest
@@ -38,11 +38,30 @@ jobs:
         run: |
          chmod +x src/DotnetLinuxBuild.sh
          bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM64
-         rm -r src/JoyRumble.NET.App/obj
-         rm -r src/JoyRumble.Native/obj
-         rm -r src/JoyRamble.Net/obj
-         bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM
+         
+    - uses: uraimo/run-on-arch-action@v2.5.1
+      name: Run commands
+      id: build-arch7
+      with:
+        arch: armv7
+        distro: ubuntu_latest
 
+        dockerRunArgs: |
+            --volume "${PWD}/src:/src"
+        
+        shell: /bin/sh
+
+        install: |
+         apt-get update
+         apt-get install -y dotnet-sdk-7.0
+         apt-get install -y g++
+         apt-get install -y curl
+         curl -fsSL https://aka.ms/install-artifacts-credprovider.sh
+         dotnet new install GCC.Build.Template --interactive --nuget-source https://api.nuget.org/v3/index.json         
+
+        run: |
+         chmod +x src/DotnetLinuxBuild.sh
+         bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM
     
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
