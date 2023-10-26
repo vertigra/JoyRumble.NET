@@ -26,6 +26,9 @@ jobs:
           cpu_info: cpuinfo/raspberrypi_4b
     steps:
     - uses: actions/checkout@v4
+    - 
+      name: Check disk space
+      run: df . -h
     - uses: pguyot/arm-runner-action@v2.5.2
       with:
         base_image: ${{ matrix.base_image }}
