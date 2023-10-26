@@ -19,11 +19,11 @@ jobs:
         - base_image: raspios_lite:latest
           arch: armv7l
           cpu: cortex-a7
-          cpu_info: raspberrypi_4b
+          cpu_info: cpuinfo/raspberrypi_4b
         - base_image: raspios_lite_arm64:latest
           arch: aarch64
           cpu: cortex-a53
-          cpu_info: raspberrypi_4b
+          cpu_info: cpuinfo/raspberrypi_4b
     steps:
     #- uses: actions/checkout@v4
     - uses: pguyot/arm-runner-action@v2.5.2
