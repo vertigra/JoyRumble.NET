@@ -22,7 +22,7 @@ jobs:
           cpu_info: raspberrypi_4b
         - base_image: raspios_lite_arm64:latest
           arch: aarch64
-          cpu: cortex-a7
+          cpu: cortex-a53
           cpu_info: raspberrypi_4b
     steps:
     #- uses: actions/checkout@v4
