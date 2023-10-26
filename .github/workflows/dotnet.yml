@@ -34,12 +34,15 @@ jobs:
         base_image: ${{ matrix.base_image }}
         cpu: ${{ matrix.cpu }}
         cpu_info: ${{ matrix.cpu_info }}
+        image_additional_mb: 512
         commands: |
+            df . -h
             test `uname -m` = ${{ matrix.arch }}
             grep Model /proc/cpuinfo
             apt-get update
             apt-get install -y g++
             apt-get install -y wget
+            df . -h
             wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
             chmod +x dotnet-install.sh
             bash dotnet-install.sh --channel 7.0
