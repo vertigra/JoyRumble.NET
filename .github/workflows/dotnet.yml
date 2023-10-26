@@ -45,7 +45,6 @@ jobs:
             apt-get install -y curl
             wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet7pi/main/install.sh | bash
             curl -fsSL https://aka.ms/install-artifacts-credprovider.sh
-            dotnet new install GCC.Build.Template
 
     #steps:
     #- uses: actions/checkout@v3
