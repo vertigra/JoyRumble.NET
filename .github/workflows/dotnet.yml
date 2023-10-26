@@ -42,13 +42,7 @@ jobs:
             apt-get update
             apt-get install -y g++
             apt-get install -y wget
-            df . -h
-            wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
-            chmod +x dotnet-install.sh
-            bash dotnet-install.sh --channel 7.0
-            export DOTNET_ROOT=$HOME/dotnet
-            export PATH=$PATH:$HOME/dotnet
-            ln -s $DOTNET_ROOT/dotnet /usr/local/bin
+            wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet7pi/main/install.sh | sudo bash
             wget https://aka.ms/install-artifacts-credprovider.sh | bash
             dotnet new install GCC.Build.Template --interactive --nuget-source https://api.nuget.org/v3/index.json   
 
