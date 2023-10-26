@@ -1,7 +1,7 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
-name: ARM64 Debug Build
+name: ARM Build
 
 on:
   push:
@@ -12,60 +12,56 @@ on:
 jobs:  
   build:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        base_image: ["raspios_lite:latest", "raspios_lite_arm64:latest"]
+        include:
+        - base_image: raspios_lite:latest
+          arch: armv7l
+          cpu: cortex-a7
+          cpu_info: raspberrypi_4b
+        - base_image: raspios_lite_arm64:latest
+          arch: aarch64
+          cpu: cortex-a7
+          cpu_info: raspberrypi_4b
     steps:
-    - uses: actions/checkout@v3
-    - uses: uraimo/run-on-arch-action@v2.5.1
-      name: Run commands
-      id: build-arm64
+    - uses: actions/checkout@v4
+    - uses: pguyot/arm-runner-action@v2
       with:
-        arch: aarch64
-        distro: ubuntu_latest
+        base_image: ${{ matrix.base_image }}
+        commands: |
+            echo "Minimal"
+            test `uname -m` = ${{ matrix.arch }}
 
-        dockerRunArgs: |
-            --volume "${PWD}/src:/src"
-        
-        shell: /bin/sh
+    #steps:
+    #- uses: actions/checkout@v3
+    #- uses: uraimo/run-on-arch-action@v2.5.1
+    #  name: Run commands
+    #  id: build-arm64
+    #  with:
+    #    arch: aarch64
+    #    distro: ubuntu_latest
 
-        install: |
-         apt-get update
-         apt-get install -y dotnet-sdk-7.0
-         apt-get install -y g++
-         apt-get install -y curl
-         curl -fsSL https://aka.ms/install-artifacts-credprovider.sh
-         dotnet new install GCC.Build.Template --interactive --nuget-source https://api.nuget.org/v3/index.json         
+    #     dockerRunArgs: |
+    #        --volume "${PWD}/src:/src"
+    #    
+    #    shell: /bin/sh
 
-        run: |
-         chmod +x src/DotnetLinuxBuild.sh
-         bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM64
-         
-    - uses: uraimo/run-on-arch-action@v2.5.1
-      name: Run commands
-      id: build-arch7
-      with:
-        arch: armv7
-        distro: ubuntu_latest
+    #    install: |
+    #     apt-get update
+    #     apt-get install -y dotnet-sdk-7.0
+    #     apt-get install -y g++
+    #     apt-get install -y curl
+    #     curl -fsSL https://aka.ms/install-artifacts-credprovider.sh
+    #     dotnet new install GCC.Build.Template --interactive --nuget-source https://api.nuget.org/v3/index.json         
 
-        dockerRunArgs: |
-            --volume "${PWD}/src:/src"
-        
-        shell: /bin/sh
-
-        install: |
-         apt-get update
-         apt-get install -y dotnet-sdk-7.0
-         apt-get install -y g++
-         apt-get install -y curl
-         curl -fsSL https://aka.ms/install-artifacts-credprovider.sh
-         dotnet new install GCC.Build.Template --interactive --nuget-source https://api.nuget.org/v3/index.json         
-
-        run: |
-         chmod +x src/DotnetLinuxBuild.sh
-         bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM
+    #   run: |
+    #     chmod +x src/DotnetLinuxBuild.sh
+    #     bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM64
     
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v3
-      with:
-       name: joyramble-debug-arm64
-       path: /home/runner/work/JoyRumble.NET/JoyRumble.NET/src/bin/LinuxDebug/
-       if-no-files-found: warn
+    #- name: Upload Artifact
+    #  uses: actions/upload-artifact@v3
+    #  with:
+    #   name: joyramble-debug-arm64
+    #   path: /home/runner/work/JoyRumble.NET/JoyRumble.NET/src/bin/LinuxDebug/
+    #   if-no-files-found: warn
