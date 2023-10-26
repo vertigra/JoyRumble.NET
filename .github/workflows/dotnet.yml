@@ -38,9 +38,9 @@ jobs:
         run: |
          chmod +x src/DotnetLinuxBuild.sh
          bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM64
-         rm -y src/JoyRumble.NET.App/obj
-         rm -y src/JoyRumble.Native/obj
-         rm -y src/JoyRamble.Net/obj
+         rm -r src/JoyRumble.NET.App/obj
+         rm -r src/JoyRumble.Native/obj
+         rm -r src/JoyRamble.Net/obj
          bash src/DotnetLinuxBuild.sh -c LinuxDebug -p ARM
 
     
