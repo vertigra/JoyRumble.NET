@@ -42,8 +42,9 @@ jobs:
             apt-get update
             apt-get install -y g++
             apt-get install -y wget
-            wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet7pi/main/install.sh | sudo bash
-            wget https://aka.ms/install-artifacts-credprovider.sh | bash
+            apt-get install -y curl
+            wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet7pi/main/install.sh | bash
+            curl -fsSL https://aka.ms/install-artifacts-credprovider.sh
             dotnet new install GCC.Build.Template --interactive --nuget-source https://api.nuget.org/v3/index.json   
 
     #steps:
